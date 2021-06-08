@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Music school</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<meta name="robots" content="noindex, nofollow" />
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+</head>
+
+<body>
+	<header class="main-header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<div class="main-header-holder">
+						<div class="header-left">
+							<a class="logo" href="index.html">
+								<img src="img/logo.svg" alt="logo">
+							</a>
+						</div>
+						<div class="header-center">
+							
+						</div>
+						<div class="header-right">
+							<ul class="main-nav">
+								<!-- <li>
+									<a href="#">
+										<span class="glitch" data-glitch="Courses"><span>Courses</span></span>
+									</a> -->
+									<!-- <ul class="sup">
+										<li><a href="#">Course1</a></li>
+										<li><a href="#">Course2</a></li>
+										<li><a href="#">Course3</a></li>
+									</ul> -->
+								<!-- </li> -->
+								<li><a href="contact.html"><span class="glitch" data-glitch="Contuct us"><span>contact.html</span></span></a></li>
+								<li><a href="course.html"><span class="glitch" data-glitch="Contuct us"><span>course.html</span></span></a></li>
+								<li><a class="login" href="#"><span class="glitch" data-glitch="log in"><span>log in</span></span></a></li>
+							</ul>
+							<!-- <a class="login" href="#"><span class="glitch" data-glitch="log in"><span>log in</span></span></a> -->
+							<a class="cart" href="cart.html">
+								<span>1</span>
+							</a>
+							<a href="#" class="mobile-nav-trigger"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	
+	<section class="section section-cart">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section-cart-holder">
+						<h1>Your cart</h1>
+
+						<div class="form-holder">
+
+
+						<!-- {% if cart.item_count > 0 %} -->
+						  <form action="/cart" method="post" novalidate>
+						    <table>
+						      <thead>
+						        <th colspan="2">Product</th>
+						        <th>Price</th>
+						        <th>Quantity</th>
+						        <th>total</th>
+						      </thead>
+						      <tbody>
+						        <!-- {% for item in cart.items %} -->
+						          <tr>
+						            <td>
+						              <a href="{{ item.url | within: collections.all }}">
+						                <!-- <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}"> -->
+						                <div class="img">
+						                	<img src="img/cover-1.jpg">
+						                </div>
+						                
+						              </a>
+						            </td>
+						            <td>
+						              <a class="product-name" href="{{ item.url }}"><!-- {{ item.product.title }} -->From Idea To Mastering</a>
+						             <!--  {{ item.variant.title }} -->
+						              <a class="remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a>
+						            </td>
+						            <td><!-- {{ item.price | money }} -->$ 100</td>
+						            <td>
+						              <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0">
+						            </td>
+						            <td>
+						            	$ 100
+						             <!--  {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
+						              {{ item.line_price | money }}
+						              {% for discount in item.discounts %}{{ discount.title }} --><!-- {% endfor %} -->
+						            </td>
+						          </tr>
+
+						          <tr>
+						            <td>
+						              <a href="{{ item.url | within: collections.all }}">
+						                <!-- <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}"> -->
+						                <div class="img">
+						                	<img src="img/cover-1.jpg">
+						                </div>
+						                
+						              </a>
+						            </td>
+						            <td>
+						              <a class="product-name" href="{{ item.url }}"><!-- {{ item.product.title }} -->From Idea To Mastering</a>
+						             <!--  {{ item.variant.title }} -->
+						              <a class="remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a>
+						            </td>
+						            <td><!-- {{ item.price | money }} -->$ 100</td>
+						            <td>
+						              <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0">
+						            </td>
+						            <td>
+						            	$ 100
+						             <!--  {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
+						              {{ item.line_price | money }}
+						              {% for discount in item.discounts %}{{ discount.title }} --><!-- {% endfor %} -->
+						            </td>
+						          </tr>
+						       <!--  {% endfor %} -->
+						      </tbody>
+						    </table>
+						    <div>
+						    <div class="subtotal">
+						      <p>Subtotal  <span>$ 100</span><!-- {{ cart.total_price | money }} --></p>
+						     </div>
+						     <div class="terms_cart-holder">
+						      <p class="terms_cart">
+						        <input type="checkbox" id="agree" />
+						        <label for="agree">
+						           I agree with Motion Design School's <a href="https://motiondesign.school/pages/terms" target="_blank" rel="noreferrer nofollow">Terms of Use</a> &amp; <a href="https://motiondesign.school/pages/privacy" target="_blank" rel="noreferrer nofollow">Privacy Policy</a> and agree to receive newsletters by email. (You can unsubscribe any time you wish)
+						        </label>
+						      </p>
+						      <div class="checkout-alert" style="display: none;">
+						        Please agree with the terms and conditions of sales to check out.
+						      </div>
+						    </div>
+						     <div class="buttons">
+						      <button class="btn btn--secondary" type="submit" name="update">Update</button>
+						      <button class="btn" type="submit" name="checkout">Checkout</button>
+						     </div>
+						    </div>
+						  </form>
+						<!-- {% else %} -->
+						 <!--  <h1>Your cart</h1>
+						  Cart is empty
+						{% endif %} -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<section class="section section-footer">
+			<div class="container">
+				<div class="row section-footer-holder">
+					<div class="col-sm-12 col-md-6">
+						<div class="left">
+							<div class="title">Who we be</div>
+							<p>In 2019 we launched our Music School in Ukraine. Today our school is opened in four cities across the country and to everyone online.</p>
+							<ul class="social">
+								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-6 col-md-3 col-lg-3">
+						<div class="center">
+							<div class="title">OUR POLICIES</div>
+							<ul>
+								<li><a href="#">Courses</a></li>
+								<li><a href="#">Master Classes</a></li>
+								<li><a href="#">Free Stuff</a></li>
+								<li><a href="#">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-6 col-md-3 col-lg-3">
+						<div class="right">
+							<div class="title">OUR POLICIES</div>
+							<ul>
+								<li><a href="#">Terms of Use</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Cookie Policy</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6"><div class="copyright">©2019 Music School Company. 2727 Mill Ave, Brooklyn, New York, 11234</div></div>
+						<div class="col-md-6">
+							<div class="payments">
+								<img src="img/banks.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
+
+
+	
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>
